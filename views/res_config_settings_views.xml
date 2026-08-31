@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- Salutem Configuration Menu -->
-        <menuitem id="menu_salutem_config_root"
-                  name="Salutem Configuration"
-                  web_icon="salutem,static/description/icon.png"
-                  sequence="100"/>
-
         <!-- Settings Action -->
         <record id="action_salutem_config_settings" model="ir.actions.act_window">
             <field name="name">Settings</field>
@@ -17,12 +11,12 @@
             <field name="context">{'module' : 'salutem'}</field>
         </record>
 
-        <!-- Menu Item -->
-        <menuitem id="menu_salutem_settings"
-                  name="Settings"
-                  parent="menu_salutem_config_root"
+        <!-- Salutem Configuration Menu in Settings -->
+        <menuitem id="menu_salutem_config_settings"
+                  name="Salutem"
+                  parent="base.menu_administration"
                   action="action_salutem_config_settings"
-                  sequence="0"/>
+                  sequence="100"/>
 
         <!-- Config Settings View -->
         <record id="res_config_settings_view_form_salutem" model="ir.ui.view">
