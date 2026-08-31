@@ -36,6 +36,12 @@
                             <setting string="Products" help="Rename 'Products' to 'Subscription Packages' globally">
                                 <field name="rename_products_to_subscription_packages"/>
                             </setting>
+                            <setting string="Invoices" help="Rename 'Invoices' to 'Premiums' globally">
+                                <field name="rename_invoices_to_premiums"/>
+                            </setting>
+                            <setting string="Product Variants" help="Rename 'Product Variants' to 'Subscription Variants' globally">
+                                <field name="rename_product_variants_to_subscription_variants"/>
+                            </setting>
                         </block>
                     </app>
                 </xpath>

@@ -21,6 +21,18 @@ class ResConfigSettings(models.TransientModel):
         config_parameter='salutem.rename_products',
         default=False
     )
+    
+    rename_invoices_to_premiums = fields.Boolean(
+        string='Rename Invoices to Premiums',
+        config_parameter='salutem.rename_invoices',
+        default=False
+    )
+    
+    rename_product_variants_to_subscription_variants = fields.Boolean(
+        string='Rename Product Variants to Subscription Variants',
+        config_parameter='salutem.rename_product_variants',
+        default=False
+    )
 
     def set_values(self):
         super(ResConfigSettings, self).set_values()
@@ -29,5 +41,7 @@ class ResConfigSettings(models.TransientModel):
         self.env['salutem.rename.utils'].apply_renames(
             rename_customers=self.rename_customers_to_members,
             rename_sales=self.rename_sales_to_contributions,
-            rename_products=self.rename_products_to_subscription_packages
+            rename_products=self.rename_products_to_subscription_packages,
+            rename_invoices=self.rename_invoices_to_premiums,
+            rename_product_variants=self.rename_product_variants_to_subscription_variants
         )
