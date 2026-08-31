@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Salutem Configuration Menu -->
+        <menuitem id="menu_salutem_config_root"
+                  name="Salutem Configuration"
+                  web_icon="salutem,static/description/icon.png"
+                  sequence="100"/>
+
+        <!-- Settings Action -->
+        <record id="action_salutem_config_settings" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">current</field>
+            <field name="context">{'module' : 'salutem'}</field>
+        </record>
+
+        <!-- Menu Item -->
+        <menuitem id="menu_salutem_settings"
+                  name="Settings"
+                  parent="menu_salutem_config_root"
+                  action="action_salutem_config_settings"
+                  sequence="0"/>
+
+        <!-- Config Settings View -->
+        <record id="res_config_settings_view_form_salutem" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.salutem</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <app data-string="Salutem Configuration" string="Salutem" name="salutem" groups="base.group_system">
+                        <block title="Dynamic Renaming" name="salutem_renaming">
+                            <setting string="Customers" help="Rename 'Customers' to 'Members' globally">
+                                <field name="rename_customers_to_members"/>
+                            </setting>
+                            <setting string="Sales" help="Rename 'Sales' to 'Contributions' globally">
+                                <field name="rename_sales_to_contributions"/>
+                            </setting>
+                            <setting string="Products" help="Rename 'Products' to 'Subscription Packages' globally">
+                                <field name="rename_products_to_subscription_packages"/>
+                            </setting>
+                        </block>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
