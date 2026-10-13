@@ -10,8 +10,10 @@
         - Sales -> Contributions
         - Products -> Subscription Packages
     """,
-    'author': 'Stark',
-    'website': '',
+    'author': 'DraftPOS / Havano Solutions',
+    'website': 'https://draftpos.com',
+    'license': 'LGPL-3',
+    'images': ['static/description/icon.png'],
     'depends': ['base', 'sale_management', 'contacts', 'product'],
     'data': [
         'security/ir.model.access.csv',
